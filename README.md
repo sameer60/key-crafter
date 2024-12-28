@@ -1,8 +1,92 @@
-# React + Vite
+# KeyCrafter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**"Craft unique, secure keys for ultimate protection online."**
 
-Currently, two official plugins are available:
+KeyCrafter is a powerful and intuitive password generator designed to help users create strong, random, and customizable passwords, ensuring maximum online security. Say goodbye to weak and repetitive passwords and let KeyCrafter craft the perfect keys to safeguard your digital life.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## Features
+
+- **Customizable Password Length**: Choose the desired length of your password for flexibility.
+- **Character Options**: Include uppercase letters, lowercase letters, numbers, and special characters.
+- **Instant Copy**: Copy your generated password to the clipboard with a single click.
+- **User-Friendly Interface**: Clean and intuitive design for seamless use.
+- **Mobile-Responsive**: Accessible and fully functional on any device.
+
+---
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/keycrafter.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd keycrafter
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the application:
+   ```bash
+   npm start
+   ```
+
+---
+
+## Usage
+
+1. Open the app in your browser.
+2. Select the desired options:
+   - Password length.
+   - Character set (uppercase, lowercase, numbers, special characters).
+3. Click **Generate Password**.
+4. Use the **Copy to Clipboard** feature to save your password instantly.
+
+---
+
+## Technologies Used
+
+- **React.js**: For building the user interface.
+- **Tailwind CSS**: For styling the application.
+- **JavaScript**: For logic and functionality.
+
+---
+
+## Contributing
+
+We welcome contributions!
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+---
+
+## Acknowledgments
+
+Special thanks to the open-source community for inspiration and resources that made KeyCrafter possible.
+
+---
+
+Secure your digital world with **KeyCrafter** today! 🚀

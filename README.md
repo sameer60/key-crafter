@@ -77,16 +77,4 @@ We welcome contributions!
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
-
----
-
-## Acknowledgments
-
-Special thanks to the open-source community for inspiration and resources that made KeyCrafter possible.
-
----
-
 Secure your digital world with **KeyCrafter** today! 🚀

@@ -1,6 +1,7 @@
 import { getRandomChar } from "./utils";
 import toast, { Toaster } from "react-hot-toast";
 import { FaHeart } from "react-icons/fa";
+import { MdOutlineContentCopy } from "react-icons/md";
 import { useState } from "react";
 import {
   lowerCaseLetters,
@@ -13,6 +14,7 @@ import "./App.css";
 function App() {
   const [password, setPassword] = useState("");
   const [passwordLength, setPasswordLength] = useState(8);
+  const [strength, setStrength] = useState("");
   const [isLowercase, setIsLowercase] = useState(true);
   const [isUppercase, setIsUppercase] = useState(false);
   const [isNumbers, setIsNumbers] = useState(false);
@@ -60,6 +62,31 @@ function App() {
     }
     let finalPassword = generatedPassword.slice(0, passwordLength);
     setPassword(finalPassword);
+    calculateStrength();
+  }
+
+  function calculateStrength() {
+    let strengthCounter = 0;
+
+    // Increment strengthCounter based on conditions
+    if (password && passwordLength >= 12) strengthCounter++;
+    if (isLowercase) strengthCounter++;
+    if (isUppercase) strengthCounter++;
+    if (isNumbers) strengthCounter++;
+    if (isSymbols) strengthCounter++;
+
+    // Map strength levels
+    const strengthLabels = [
+      "", // 0
+      "very weak", // 1
+      "weak", // 2
+      "medium", // 3
+      "strong", // 4
+      "very strong", // 5
+    ];
+
+    // Set strength text based on strengthCounter
+    setStrength(strengthLabels[strengthCounter]);
   }
 
   const handleCopyToClipboard = () => {
@@ -89,12 +116,13 @@ function App() {
 
         <div
           onClick={handleCopyToClipboard}
-          className="bg-indigo-50 transition-colors rounded-xl h-14 border-2 border-dashed border-gray-700 w-full sm:w-4/5 md:w-1/2 text-gray-500 mx-auto flex items-center px-4 cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap"
+          className="bg-indigo-50 transition-colors rounded-xl h-14 border-2 border-dashed border-gray-700 w-full sm:w-4/5 md:w-1/2 text-gray-500 mx-auto flex justify-between items-center px-4 cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap"
         >
-          {password ? password : "Click on generate button"}
+          {password ? password : "Click on 'Generate'"}{" "}
+          <MdOutlineContentCopy size={20} />
         </div>
 
-        <div className="w-full sm:w-4/5 md:w-1/2 mx-auto">
+        <div className="w-full sm:w-4/5 md:w-1/2 mx-auto border-2 border-dashed border-gray-700 rounded-xl p-4">
           <div className="flex justify-between mb-4">
             <h3 className="font-semibold text-gray-600">Character Length</h3>
             <h4 className="font-bold text-gray-700">{passwordLength}</h4>
@@ -107,6 +135,7 @@ function App() {
             className="range w-full mb-4"
             onChange={(e) => setPasswordLength(e.target.value)}
           />
+          <div className="divider m-0"></div>
 
           <div className="grid gap-4">
             {conditions.map((item, idx) => (
@@ -122,6 +151,10 @@ function App() {
                 </label>
               </div>
             ))}
+            <div className="divider m-0"></div>
+            <div className="badge badge-neutral p-3 flex justify-center items-center font-semibold tracking-tight">
+              {strength}
+            </div>
           </div>
 
           <div className="flex justify-center mt-6">
@@ -135,7 +168,11 @@ function App() {
       <footer className="mt-10 md:mt-20 mb-4">
         <h2 className="text-center text-gray-800 font-semibold">
           Made with <FaHeart className="inline" color="red" /> by{" "}
-          <a href="https://sameer-frontend-dev.vercel.app/" className="link">
+          <a
+            href="https://sameer-frontend-dev.vercel.app/"
+            target="_blank"
+            className="link"
+          >
             Sameer
           </a>
         </h2>

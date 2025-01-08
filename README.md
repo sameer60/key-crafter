@@ -73,7 +73,7 @@ We welcome contributions!
    ```bash
    git push origin feature-name
    ```
-5. Open a pull request.
+5. The app will be available at `https://key-crafter.vercel.app/`
 
 ---
 
